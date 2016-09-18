@@ -244,7 +244,7 @@ public class Contest {
 
         return sorted_word;
     }
-
+/*
     public static boolean isAnagram(String sorted_word, String word2){
         if ( sorted_word.length() != word2.length() ) {
             return false;
@@ -254,7 +254,7 @@ public class Contest {
 
         return sorted_word.equals(sorted_word2);
     }
-
+*/
     private static final int MAX_DIST = 1001;
 
 

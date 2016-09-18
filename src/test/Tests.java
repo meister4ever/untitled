@@ -112,4 +112,11 @@ public class Tests {
         assertEquals(res, sol.solution(A));
     }
 
+    @org.junit.Test
+    public void DistinctTest() {
+        Distinct sol = new Distinct();
+        int[] A = {2,1,1,2,3,1};
+        int res = 3;
+        assertEquals(res, sol.solution(A));
+    }
 }

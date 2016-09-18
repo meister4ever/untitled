@@ -1,10 +1,9 @@
 package main;
+import java.util.*;
 
-/**
- * Created by meister4ever on 18/9/16.
- */
 public class Distinct {
     public int solution(int[] A) {
-        
+        Arrays.sort(A);
+        int last= 0;
     }
 }
