@@ -1,8 +1,7 @@
+package main;
 import java.io.*;
 import java.util.*;
 import java.math.*;
-
-package main;
 
 public class MinAbsSumOfTwo {
 	public static int abs(int a){

@@ -32,7 +32,7 @@ public class MinAbsSumOfTwoTest {
 	@org.junit.Test
     public void TestAllNegative() {
         MinAbsSumOfTwo sol = new MinAbsSumOfTwo();
-        int[] A = {-5, -1, -7, -3}
+        int[] A = {-5, -1, -7, -3};
         assertEquals(4, sol.solution(A));
     }
 }
