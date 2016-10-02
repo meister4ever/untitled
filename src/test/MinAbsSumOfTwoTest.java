@@ -27,12 +27,12 @@ public class MinAbsSumOfTwoTest {
     public void TestAllPositive() {
         MinAbsSumOfTwo sol = new MinAbsSumOfTwo();
         int[] A = {0, 11, 5, 2, 19};
-        assertEquals(2, sol.solution(A));
+        assertEquals(0, sol.solution(A));
     }
 	@org.junit.Test
     public void TestAllNegative() {
         MinAbsSumOfTwo sol = new MinAbsSumOfTwo();
         int[] A = {-5, -1, -7, -3};
-        assertEquals(4, sol.solution(A));
+        assertEquals(2, sol.solution(A));
     }
 }
