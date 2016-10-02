@@ -64,18 +64,4 @@ public class ContestTest {
         int[] numbers = {2, 2, 2};
         assertEquals(result, sol.countMoves(numbers));
     }
-    @org.junit.Test
-    public void Test9() {
-        Contest sol = new Contest();
-        long result = 15;
-        String toEvaluate = "acdapmpomp";
-        assertEquals(result, sol.funPal(toEvaluate));
-    }
-    @org.junit.Test
-    public void Test9bis() {
-        Contest sol = new Contest();
-        long result = 25;
-        String toEvaluate = "axbawbaseksqke";
-        assertEquals(result, sol.funPal(toEvaluate));
-    }
 }

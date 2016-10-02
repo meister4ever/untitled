@@ -66,6 +66,15 @@ public class Tests {
     }
 
     @org.junit.Test
+    public void DistinctTest() {
+        Distinct sol = new Distinct();
+        int[] P = {2,1,1,2,3,1};
+        assertEquals(3, sol.solution(P));
+    }
+
+
+
+    @org.junit.Test
     public void Test1() {
         Test1 sol = new Test1();
         int[] A = {5,5,1,7,2,3,5};
@@ -112,11 +121,4 @@ public class Tests {
         assertEquals(res, sol.solution(A));
     }
 
-    @org.junit.Test
-    public void DistinctTest() {
-        Distinct sol = new Distinct();
-        int[] A = {2,1,1,2,3,1};
-        int res = 3;
-        assertEquals(res, sol.solution(A));
-    }
 }

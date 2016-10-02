@@ -75,24 +75,6 @@ public class Contest {
         return true;
     }
 
-    public int[] amountOfAnagrams(String word, String[] phrases) {
-        int count = 0;
-        int n = phrases.length;
-        int[] result = new int[n];
-        for (int i = 0; i < n; i++) {
-            count = 0;
-            Scanner scan = new Scanner(phrases[i]);
-            while (scan.hasNext()) {
-                String toAnalyze = new String(scan.next());
-                if (isAnagram(toAnalyze, word))
-                    count++;
-            }
-            result[i] = count;
-            scan.close();
-        }
-        return result;
-    }
-
     public int waysToClimb(int n) {
         if (n == 0) return 0;
         int a = 1;
@@ -174,7 +156,7 @@ public class Contest {
         int min = numbers[0];
         int indexOfMax = n - 1;
         int newMaxIndex = n - 1;
-        while (min!=max) {
+        while (min != max) {
             int increment = Math.abs(max - min);
             numberOfMoves += increment;
             min = min + increment;
@@ -193,8 +175,7 @@ public class Contest {
     }
 
 
-    void lps(String str)
-    {
+    void lps(String str) {
         int n = str.length();
         int i, j, counting;
         int L[][] = new int[n][n];
@@ -203,62 +184,45 @@ public class Contest {
         for (i = 0; i < n; i++)
             L[i][i] = 1;
 
-        for (cl=2; cl<=n; cl++)
-        {
-            for (i=0; i<n-cl+1; i++)
-            {
-                j = i+cl-1;
+        for (cl = 2; cl <= n; cl++) {
+            for (i = 0; i < n - cl + 1; i++) {
+                j = i + cl - 1;
                 if (str.charAt(i) == str.charAt(j) && cl == 2)
                     L[i][j] = 2;
                 else if (str.charAt(i) == str.charAt(j))
-                    L[i][j] = L[i+1][j-1] + 2;
+                    L[i][j] = L[i + 1][j - 1] + 2;
                 else
-                    L[i][j] = Math.max(L[i][j-1], L[i+1][j]);
+                    L[i][j] = Math.max(L[i][j - 1], L[i + 1][j]);
             }
         }
-        return ;
+        return;
     }
 
 
-    int lcs(int l,int r){
-        if(l >r) return 0;
-        if(l == r) return 1;
-        if(L[l][r] != -1) return L[l][r];
-
-        if(s[l]==s[r]) return L[l][r] = 2+lcs(l+1,r-1);
-        return L[l][r] = Math.max(lcs(l+1,r),lcs(l,r-1)) ;
-    }
-
-    public int funPal(String s) {
-        int M = -1;
-        for(int i =0 ; i < s.length()-1 ;i++)
-            M = Math.max(lcs(0,i)*lcs(i+1,s.length()-1),M);
-    }
-}
-
-    public static String sortWord(String word){
-        word=word.toLowerCase();
+    public static String sortWord(String word) {
+        word = word.toLowerCase();
         char[] cword = word.toCharArray();
         Arrays.sort(cword);
         String sorted_word = new String(cword);
 
         return sorted_word;
     }
-/*
-    public static boolean isAnagram(String sorted_word, String word2){
-        if ( sorted_word.length() != word2.length() ) {
-            return false;
+
+    /*
+        public static boolean isAnagram(String sorted_word, String word2){
+            if ( sorted_word.length() != word2.length() ) {
+                return false;
+            }
+
+            String sorted_word2 = sortWord(word2);
+
+            return sorted_word.equals(sorted_word2);
         }
-
-        String sorted_word2 = sortWord(word2);
-
-        return sorted_word.equals(sorted_word2);
-    }
-*/
+    */
     private static final int MAX_DIST = 1001;
 
 
-    static int[] amountOfAnagrams(String word, String[] phrases){
+    public static int[] amountOfAnagrams(String word, String[] phrases) {
 
         int[] result = new int[phrases.length];
         String sorted_word = sortWord(word);
@@ -266,11 +230,11 @@ public class Contest {
         String delims = "[ .,]+";
 
 
-        for (int phrase_i = 0; phrase_i < phrases.length; phrase_i++){
+        for (int phrase_i = 0; phrase_i < phrases.length; phrase_i++) {
             String[] words = phrases[phrase_i].split(delims);
             int amount = 0;
-            for (int word_i = 0; word_i < words.length; word_i++){
-                if (isAnagram(sorted_word, words[word_i]))
+            for (int word_i = 0; word_i < words.length; word_i++) {
+                if (anagrams(sorted_word, words[word_i]))
                     amount++;
             }
             result[phrase_i] = amount;
@@ -278,3 +242,4 @@ public class Contest {
 
         return result;
     }
+}
