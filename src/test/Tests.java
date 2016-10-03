@@ -121,4 +121,11 @@ public class Tests {
         assertEquals(res, sol.solution(A));
     }
 
+    @org.junit.Test
+    public void TestStoneWall() {
+        StoneWall sol = new StoneWall();
+        int[] A = {8, 8, 5, 7, 9, 8, 7, 4, 8};
+        assertEquals(7, sol.solution(A));
+    }
+
 }
