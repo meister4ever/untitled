@@ -128,4 +128,12 @@ public class Tests {
         assertEquals(7, sol.solution(A));
     }
 
+    @org.junit.Test
+    public void TestFish() {
+        Fish sol = new Fish();
+        int[] A = {4, 3, 2, 1, 5};
+        int[] B = {0, 1, 0, 0, 0};
+        assertEquals(2, sol.solution(A, B));
+    }
+
 }
