@@ -136,4 +136,11 @@ public class Tests {
         assertEquals(2, sol.solution(A, B));
     }
 
+    @org.junit.Test
+    public void TestMaxSliceSum() {
+        MaxSliceSum sol = new MaxSliceSum();
+        int[] A = {3, 2, -6, 4, 0};
+        assertEquals(5, sol.solution(A));
+    }
+
 }
