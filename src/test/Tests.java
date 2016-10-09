@@ -150,4 +150,12 @@ public class Tests {
         assertEquals(-1, sol.solution(A));
     }
 
+
+    @org.junit.Test
+    public void TestMaxDoubleSliceSum() {
+        MaxDoubleSliceSum sol = new MaxDoubleSliceSum();
+        int[] A = {3, 2, 6, -1, 4, 5, -1, 2};
+        assertEquals(17, sol.solution(A));
+    }
+
 }
